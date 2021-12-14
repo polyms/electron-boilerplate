@@ -1,0 +1,38 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* stylelint-disable-next-line value-no-vendor-prefix */
+  min-height: -webkit-fill-available;
+  scroll-behavior: smooth;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+pre,
+code {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+button:focus {
+  outline: none;
+}
+
+a,
+select {
+  transition: all 0.2s ease-in-out;
+}
+
+:focus-visible {
+  border-radius: $border-radius;
+  box-shadow: $input-btn-focus-box-shadow;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
