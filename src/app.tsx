@@ -9,7 +9,7 @@ root.render(
       </span>{' '}
       Hello World!
     </h1>
-    <p>Welcome to your Electron application.</p>
+    <p>Welcome to your Electron application v{__VERSION__}.</p>
     <script type='module' src='/src/renderer.ts'></script>
   </>
 )
