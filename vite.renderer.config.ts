@@ -1,3 +1,4 @@
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
 
@@ -8,9 +9,22 @@ export default defineConfig(async () => {
   const tailwindcssVite = (await import('@tailwindcss/vite')).default
 
   return {
-    plugins: [react(), tailwindcssVite()],
+    plugins: [
+      tanstackRouter({
+        target: 'react',
+        autoCodeSplitting: true,
+        verboseFileRoutes: false,
+      }),
+      react(),
+      tailwindcssVite(),
+    ],
     define: {
       __VERSION__: JSON.stringify(version),
+    },
+    resolve: {
+      alias: {
+        '~': '/src',
+      },
     },
   }
 })
